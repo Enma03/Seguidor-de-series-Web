@@ -1,0 +1,18 @@
+{% extends 'template.html' %}
+
+{% block titulo %}Información de la Serie{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="serie-info">
+        <h1>Información de la Serie</h1>
+        <h2>{{ serie.nombre }}</h2>
+        <p>{{ serie.descripcion }}</p>
+        <h3>Episodios: {{ serie.cant_cap }}</h3>
+        <h3>Próximo Capítulo: {{ serie.prox_cap }}</h3>
+        <h3><button type="button">Seguir Serie</button></h3>
+    </div>
+    <div>
+        <img class="serie-image" src="{{ url_for('static', filename=serie.img_path) }}" alt="{{ serie.nombre }}">
+    </div>
+</div>
+{% endblock %}

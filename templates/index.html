@@ -1,0 +1,35 @@
+{% extends 'template.html' %}
+
+{% block titulo %}Inicio{% endblock %}
+{% block content %}
+<h1>Animes Populares</h1>
+<div class="series-container">
+    {% for serie in series %}
+    <div class="image-container">
+        <a href="/serie/{{ serie.series_id }}">
+            <img src="{{ url_for('static', filename=serie.img_path) }}" alt="{{ serie.nombre }}">
+            <div class="image-caption">
+                <h3>{{ serie.nombre }}</h3>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% if followed_series %}
+<h1>Series Seguidas</h1>
+<div class="series-container">
+    {% for serie in followed_series %}
+    <div class="image-container">
+        <a href="/serie/{{ serie.series_id }}">
+            <img src="{{ url_for('static', filename=serie.img_path) }}" alt="{{ serie.nombre }}">
+            <div class="image-caption">
+                <h3>{{ serie.nombre }}</h3>
+                <p>{{ serie.prox_cap }}</p>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

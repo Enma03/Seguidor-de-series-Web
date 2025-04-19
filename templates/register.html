@@ -1,0 +1,12 @@
+{% extends 'template_login.html' %}
+
+{% block titulo %}Registro{% endblock %}
+{% block content_login %}
+<div class="contenedor-login">
+    <form method="POST" action="#">
+        <input type="text" name="username" placeholder="Nombre de Usuario" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <button type="button">Registrarte</button>
+    </form>
+</div>
+{% endblock %}
