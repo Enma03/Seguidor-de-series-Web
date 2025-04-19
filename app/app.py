@@ -51,4 +51,4 @@ def serie(series_id):
     return render_template("serie.html", serie=serie)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=3000,debug=True)
